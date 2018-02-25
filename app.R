@@ -87,7 +87,7 @@ ui <- fluidPage(
                           ),
                           tabPanel("Metadata",tableOutput("metadata"))
     )) # end mainPanel
-)) # end sidebar layout+ui
+))) # end sidebar layout+ui
 
 
 # server
