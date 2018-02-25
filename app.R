@@ -69,7 +69,7 @@ ui <- fluidPage(
                        uiOutput("listPC3")),
    
       
-      conditionalPanel(condition = "input.tabs!='Home' && input.tabs != 'Metadata',
+      conditionalPanel(condition = "input.tabs!='Home' && input.tabs != 'Metadata'",
                        downloadButton(outputId = "downloadPlot",label="Download this plot"))
                        ),#end sidebarpanel
     
