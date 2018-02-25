@@ -52,7 +52,7 @@ ui <- fluidPage(
                                    label="besPLOT Analyses",
                                    choices=c( 
                                              "Principal Component Analysis (PCA)"=1,
-                                             "Non-Metric Multidimensional Scaling (NMDS)"=2)),
+                                             "Non-Metric Multidimensional Scaling (NMDS)"=2))),
       conditionalPanel(condition = "input.vplot=='2' && input.tabs=='Plot'",
                        checkboxInput("nmdsMeta",
                                      label="Overlay Metadata",value = FALSE),
@@ -87,7 +87,7 @@ ui <- fluidPage(
                           ),
                           tabPanel("Metadata",tableOutput("metadata"))
     )) # end mainPanel
-))) # end sidebar layout+ui
+)) # end sidebar layout+ui
 
 
 # server
