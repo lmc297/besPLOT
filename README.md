@@ -132,6 +132,8 @@ You're ready to go!
 
 ## Required Steps
 
+* For an example matrix file, see section "Matrix File Examples" below
+
 0a. Make sure that the text file containing your matrix has columns separated by one of the following: 
 whitespace, tab, space, comma, colon, or semicolon
 
@@ -143,14 +145,14 @@ whitespace, tab, space, comma, colon, or semicolon
 
 0e. Make sure all other rows/columns contain numerical data
 
-* For an example matrix file, see section "Matrix File Examples" below
-
 1. Upload your file  by clicking the "Browse" button under "Matrix file (n x m matrix)" in the left panel.
 
 2. Select the delimiter for your matrix in the drop-down menu under "Matrix delimiter", i.e.
 tell besPLOT which character is used to separate columns of your matrix (whitespace, tab, space, comma, colon, or semicolon)
 
 ## Additional Steps (Categorical Metadata)
+
+* For an example metadata file, see section "Metadata File Examples" below
 
 0a. Make sure that the text file containing your metadata has columns separated by one of the following: 
 whitespace, tab, space, comma, colon, or semicolon
@@ -164,8 +166,6 @@ names in column 1 of your matrix file (the order doesn't matter)
 continuous metadata)
 
 0e. Make sure your matrix does not contain a header (i.e. the first row contains the sample name and metadata for your first sample)
-
-* For an example metadata file, see section "Metadata File Examples" below
 
 1. If you have a categorical metadata file, you can upload it by selecting the "Browse" 
 button under "Metadata file (n x 2 matrix)" in the left panel
