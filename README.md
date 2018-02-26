@@ -1,5 +1,6 @@
 # besPLOT
-## Interactive PCA and NMDS plots
+
+Interactive PCA and NMDS plots
 
 ## Overview
 
