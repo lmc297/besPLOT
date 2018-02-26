@@ -121,7 +121,7 @@ library(shiny)
 
 5. Launch version X.Y.Z of the app by typing the following command into R Studio's console:
 ```
-runGitHub(repo = "BMiner", username = "lmc297", subdir = "archive/besPLOT-X.Y.Z")
+runGitHub(repo = "besPLOT", username = "lmc297", subdir = "archive/besPLOT-X.Y.Z")
 ```
 
 You're ready to go!
