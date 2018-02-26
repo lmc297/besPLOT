@@ -145,6 +145,7 @@ whitespace, tab, space, comma, colon, or semicolon
 
 0e. Make sure all other rows/columns contain numerical data
 
+
 1. Upload your file  by clicking the "Browse" button under "Matrix file (n x m matrix)" in the left panel.
 
 2. Select the delimiter for your matrix in the drop-down menu under "Matrix delimiter", i.e.
@@ -166,6 +167,7 @@ names in column 1 of your matrix file (the order doesn't matter)
 continuous metadata)
 
 0e. Make sure your matrix does not contain a header (i.e. the first row contains the sample name and metadata for your first sample)
+
 
 1. If you have a categorical metadata file, you can upload it by selecting the "Browse" 
 button under "Metadata file (n x 2 matrix)" in the left panel
