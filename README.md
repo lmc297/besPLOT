@@ -132,7 +132,7 @@ You're ready to go!
 
 ## Required Steps
 
-* For an example matrix file, see section "Matrix File Examples" below
+**For an example matrix file, see section "Matrix File Examples" below**
 
 0a. Make sure that the text file containing your matrix has columns separated by one of the following: 
 whitespace, tab, space, comma, colon, or semicolon
@@ -152,7 +152,7 @@ tell besPLOT which character is used to separate columns of your matrix (whitesp
 
 ## Additional Steps (Categorical Metadata)
 
-* For an example metadata file, see section "Metadata File Examples" below
+**For an example metadata file, see section "Metadata File Examples" below**
 
 0a. Make sure that the text file containing your metadata has columns separated by one of the following: 
 whitespace, tab, space, comma, colon, or semicolon
