@@ -181,26 +181,32 @@ tell besPLOT which character is used to separate columns of your metadata (white
 
 ## Principal Component Analysis (PCA)
 
-This performs PCA using the 'prcomp' function in R's 'stats' package. An  interactive plot is produced using 'ggplot2'.
+This performs PCA using the ```prcomp``` function in R's ```stats``` package. An  interactive plot is produced using ```ggplot2```.
 
-By default, besPLOT plots the first, second, and third principal components (PC1, PC2, and PC3, respectively) on
-the x-axis, y-axis, and as the point size, respectively. If you want to change which PCs are viewed, you can select them
-from the lists in the left panel. You can determine which samples are associated with which points by clicking on them, 
-and you can zoom in by dragging your mouse and double-clicking on an area of the plot (double-click to zoom back out). 
-You can color your points using your categorical metadata by checking the "Overlay Metadata" box. To download the plot, 
-click "Download this plot" in the left panel.
+* By default, besPLOT plots the first, second, and third principal components (PC1, PC2, and PC3, respectively) on
+the x-axis, y-axis, and as the point size, respectively; if you want to change which PCs are viewed, you can select them
+from the lists in the left panel.
+
+* You can determine which samples are associated with which points by clicking on them.
+
+* You can zoom in by dragging your mouse and double-clicking on an area of the plot (double-click to zoom back out). 
+
+* You can color your points using your categorical metadata by checking the "Overlay Metadata" box.
+
+* To download the plot, click "Download this plot" in the left panel.
 
 Note: I have hard-coded `prcomp` to scale and center the data.
 
 ## Non-Metric Multidimensional Scaling (NMDS)
 
-This performs NMDS using the 'metaMDS' function in R's 'vegan' package and produces an interactive, 2-dimensional plot 
-using 'ggplot2'.
+This performs NMDS using the ```metaMDS``` function in R's ```vegan``` package and produces an interactive, 2-dimensional plot 
+using ```ggplot2```.
 
 NMDS is a method of ordination in which input data are fit to *k* dimensions (in besPLOT, k is set to 2 so that the results
 can be plotted in 2 dimensions). 
 
 NMDS is valuable because it makes few assumptions about the nature of your data, and it allows any distance/dissimilarity measure to be used. 
+
 besPLOT has a variety of dissimilarity metrics available, so consult the documentation for ```vegdist```
 to learn which is appropriate for your data (type ```?vegdist``` in your R Studio console)
 
@@ -210,11 +216,17 @@ Also, depending on the nature of your data, `metaMDS` may never be able to find 
 Note: I have hard-coded `metaMDS` as run through besPLOT to try a maximum of 10000 random starts (`trymax=10000`). 
 `metaMDS` will stop once this limit is reached.
 
-In besPLOT, NMDS plots display NMDS axis 1 on the x-axis (NMDS1) and NMDS axis 2 on the y (NMDS2). 
-Points represent your samples/individuals , and clicking a point will give you a list of the isolates associated with it 
-under the plot. Dragging your mouse and double-clicking allows you to zoom in on the plot (double-click to zoom back out). 
-If you have input categorical data, you can draw convex hulls around corresponding assemblies by checking the 
-"Overlay Metadata" box. To export your plot, click "Download this plot" in the left panel.
+* In besPLOT, NMDS plots display NMDS axis 1 on the x-axis (NMDS1) and NMDS axis 2 on the y (NMDS2). 
+
+* Points represent your samples/individuals , and clicking a point will give you a list of the isolates associated with it 
+under the plot. 
+
+* Dragging your mouse and double-clicking allows you to zoom in on the plot (double-click to zoom back out). 
+
+* If you have input categorical data, you can draw convex hulls around corresponding assemblies by checking the 
+"Overlay Metadata" box. 
+
+* To export your plot, click "Download this plot" in the left panel.
 
 
 ------------------------------------------------------------------------
