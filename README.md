@@ -24,7 +24,7 @@ with n rows and m columns
 * **Metadata file** *(n x 2 matrix)*: a whitespace-, tab-, space-, comma-, semicolon-, or colon-separated file
 with n rows and 2 columns
     + *Rows* represent individuals or samples
-    + *Column 1* contains sample names and should contain sample names identical to those in column 1 of the matrix file (above)
+    + *Column 1* contains sample names and should contain sample names identical to those in column 1 of the matrix file (order doesn't matter)
     + *Column 2* contains metadata associated with each sample (e.g. host, country)
     + *No header* should be included (i.e. sample names and metadata start in the first row)
     
