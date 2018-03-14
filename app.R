@@ -58,6 +58,8 @@ ui <- fluidPage(
       conditionalPanel(condition = "input.vplot=='2' && input.tabs=='Plot'",
                        checkboxInput("nmdsMeta",
                                      label="Overlay Metadata",value = FALSE),
+                       checkboxInput("species",
+                                     label="Show Column Names", value = FALSE),
                        radioButtons("dmetric",
                                     label="Dissimilarity Index",
                                     choices=list("Binomial"="binomial",
@@ -126,7 +128,7 @@ server <- function(input, output) {
             axis.title.y=element_blank())}
   
   # f'n to run nmds
-  run.nmds<-function(vmat,metadata,dmetric){
+  run.nmds<-function(vmat,metadata,dmetric,species_scores){
     vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
     vmat<-vmat[rowSums(vmat[, -1])>0,]
     # if metadata is input
@@ -169,6 +171,9 @@ server <- function(input, output) {
         geom_point(data=mymds.scores,aes(x=NMDS1,y=NMDS2,colour=factor(mymds.scores$site),shape="a"),size=2) + 
         coord_cartesian(xlim = ranges$x, ylim = ranges$y) +
         theme(legend.position = "none")
+      if (!(is.null(species_scores)){
+        nmdsplot<-nmdsplot+
+        geom_text_repel(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5,size=3)}
       nmds.final<-mymds.scores[,1:2]
       return(list(nmdsplot,nmds.final))
     }}
@@ -334,15 +339,16 @@ server <- function(input, output) {
     if (vselect=="2"){
       meta.in<-input$file1m
       dmetric<-input$dmetric
+      species_scores<-input$species
       if (is.null(meta.in)){
         vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
-        vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric)
+        vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric,species_scores=species_scores)
         return(vnmds[[1]])}
       else{
           overlay<-input$nmdsMeta
         if (overlay==FALSE){
           vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
-          vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric)
+          vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric,species_scores=species_scores)
           return(vnmds[[1]])}
         if (overlay==TRUE){
           meta.delim <- input$metasep
@@ -358,7 +364,7 @@ server <- function(input, output) {
           validate(need(any(is.na(match(target,mtable$V1)))==FALSE,"Names in column 1 of your metadata table should match names in column 1 of your matrix. Please correct your metadata table and try uploading it again."))
           ordered_table<-mtable[match(target,mtable$V1),]
           vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
-          vnmds<-run.nmds(vmat=vmat,metadata=ordered_table,dmetric = dmetric)
+          vnmds<-run.nmds(vmat=vmat,metadata=ordered_table,dmetric = dmetric,species_scores=species_scores)
           return(vnmds[[1]])}
       }}
     # if PCA
@@ -438,7 +444,7 @@ getclicks <- function(){
   vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
   if(vselect=='2'){
     dmetric<-input$dmetric
-    vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric)
+    vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric,species_scores=NULL)
     mypoints<-vnmds[[2]]}
   else if(vselect=='1'){
       if(is.null(input$pc1)){
