@@ -171,7 +171,7 @@ server <- function(input, output) {
         geom_point(data=mymds.scores,aes(x=NMDS1,y=NMDS2,colour=factor(mymds.scores$site),shape="a"),size=2) + 
         coord_cartesian(xlim = ranges$x, ylim = ranges$y) +
         theme(legend.position = "none")
-      if (!(is.null(species_scores)){
+      if (!(is.null(species_scores))){
         nmdsplot<-nmdsplot+
         geom_text_repel(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5,size=3)}
       nmds.final<-mymds.scores[,1:2]
