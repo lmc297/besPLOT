@@ -340,6 +340,8 @@ server <- function(input, output) {
       meta.in<-input$file1m
       dmetric<-input$dmetric
       species_scores<-input$species
+      if (species_scores==FALSE){
+        species_scores = NULL}
       if (is.null(meta.in)){
         vmat<-vmat[,apply(vmat, 2, var, na.rm=TRUE) != 0]
         vnmds<-run.nmds(vmat=vmat,metadata = NULL,dmetric = dmetric,species_scores=species_scores)
