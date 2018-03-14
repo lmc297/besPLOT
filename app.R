@@ -156,6 +156,9 @@ server <- function(input, output) {
         geom_point(data=mymds.scores,aes(x=NMDS1,y=NMDS2,colour=metadata,shape="a"),size=2) +
         guides(shape=FALSE) +
         coord_cartesian(xlim = ranges$x, ylim = ranges$y)
+      if (!(is.null(species_scores))){
+        nmdsplot<-nmdsplot+
+        geom_text_repel(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5,size=3)}
       nmds.final<-mymds.scores[,1:2]
       return(list(nmdsplot,nmds.final))}
     # if there is no metadata
