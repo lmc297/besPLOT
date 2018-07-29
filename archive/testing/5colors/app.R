@@ -152,8 +152,8 @@ server <- function(input, output) {
         geom_polygon(data=hull.data,aes(x=NMDS1,y=NMDS2,group=metadata,colour=metadata,fill=metadata),alpha=0.30)+
         #geom_text_repel(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5,size=3) +  
         geom_point(data=mymds.scores,aes(x=NMDS1,y=NMDS2,colour=metadata,shape="a"),size=2) +
-        scale_color_manual(values = c("cornflowerblue", "springgreen3", "deeppink3")) + 
-        scale_fill_manual(values = c("cornflowerblue", "springgreen3", "deeppink3")) +         
+        scale_color_manual(values = c("aquamarine1", "cyan3", "orchid1", "purple3", "lavender")) + 
+        scale_fill_manual(values = c("aquamarine1", "cyan3", "orchid1", "purple3", "lavender")) +         
         guides(shape=FALSE) +
         coord_cartesian(xlim = ranges$x, ylim = ranges$y)
       nmds.final<-mymds.scores[,1:2]
@@ -202,7 +202,7 @@ server <- function(input, output) {
       # take this line out if you ever want to make it continuous
       metadata<-as.factor(metadata)
       g <- g + geom_point(aes(color=metadata)) + xlab(label = paste("PC",pc1,sep = "")) + ylab(label = paste("PC",pc2,sep="")) + 
-      scale_color_manual(values = c("cornflowerblue", "springgreen3", "deeppink3")) + 
+      scale_color_manual(values = c("aquamarine1", "cyan3", "orchid1", "purple3", "lavender")) + 
       scale_size_continuous(name=paste("PC",pc3,sep="")) + coord_cartesian(xlim = ranges$x, ylim = ranges$y)
     }
     else{
