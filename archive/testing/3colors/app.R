@@ -149,7 +149,7 @@ server <- function(input, output) {
         hull.data<-rbind(hull.data,mygroup)}
       nmdsplot<-ggplot()
       nmdsplot<- nmdsplot+ 
-              scale_color_manual(values = c("cornflowerblue", "springgreen3", "deeppink3")) +         
+              scale_color_discrete(c("cornflowerblue", "springgreen3", "deeppink3")) +         
         geom_polygon(data=hull.data,aes(x=NMDS1,y=NMDS2,group=metadata,colour=metadata,fill=metadata),alpha=0.30)+
         #geom_text_repel(data=species.scores,aes(x=NMDS1,y=NMDS2,label=species),alpha=0.5,size=3) +  
         geom_point(data=mymds.scores,aes(x=NMDS1,y=NMDS2,colour=metadata,shape="a"),size=2) +
