@@ -53,6 +53,8 @@ Carroll, L.M., Huisman, J.S. & Wiedmann, M. Twentieth-century emergence of antim
 
 #### If you are interested in how the statistical methods implemented in besPLOT can be applied to genomic data (or if you just want to see some cool plots), check out the following papers:
 
+Carroll, L.M., Huisman, J.S. & Wiedmann, M. Twentieth-century emergence of antimicrobial resistant human- and bovine-associated *Salmonella enterica* serotype Typhimurium lineages in New York State. *Scientific Reports* 10, 14428 (2020). https://doi.org/10.1038/s41598-020-71344-9
+
 Carroll, Laura M., Jasna Kovac, Rachel A. Miller, Martin Wiedmann. 2017. Rapid, high-throughput identification of anthrax-causing and emetic *Bacillus cereus* group genome assemblies using BTyper, a computational tool for virulence-based classification of *Bacillus cereus* group isolates using nucleotide sequencing data. *Applied and Environmental Microbiology* 2017 Jun 16. pii: AEM.01096-17. doi: 10.1128/AEM.01096-17.
 
 Carroll, Laura M., Martin Wiedmann, Henk den Bakker, Julie Siler, Steven Warchocki, David Kent, Svetlana Lyalina, Margaret Davis, William Sischo, Thomas Besser, Lorin D. Warnick, Richard V. Pereira. Whole-Genome Sequencing of Drug-Resistant *Salmonella enterica* Isolated from Dairy Cattle and Humans in New York and Washington States Reveals Source and Geographic Associations. *Applied and Environmental Microbiology* 2017 May 31;83(12).
