@@ -47,9 +47,9 @@ As always, some statistical analyses may not be appropriate for certain data set
 
 ### Citation
 
-#### If you found the besPLOT app and/or its source code to be useful, please cite:
+#### If you found the besPLOT app and/or its source code to be useful, please cite the following paper:
 
-Carroll, Laura M. 2018. besPLOT: Interactive PCA and NMDS plots. Version 1.0.0. https://github.com/lmc297/besPLOT.
+Carroll, L.M., Huisman, J.S. & Wiedmann, M. Twentieth-century emergence of antimicrobial resistant human- and bovine-associated *Salmonella enterica* serotype Typhimurium lineages in New York State. *Scientific Reports* 10, 14428 (2020). https://doi.org/10.1038/s41598-020-71344-9
 
 #### If you are interested in how the statistical methods implemented in besPLOT can be applied to genomic data (or if you just want to see some cool plots), check out the following papers:
 
