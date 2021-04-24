@@ -231,11 +231,11 @@ server <- function(input, output) {
     if (is.null(input$file1)){
       return(NULL)
     }else{
-      mtable<-read.delim(file=infile$datapath,header=FALSE,sep = meta.delim, check.names=F, stringsAsFactors=F)
+      mtable<-read.table(infile$datapath,header=FALSE,sep = meta.delim)
       validate(need(ncol(mtable)==2,"Your metadata file needs to have exactly 2 columns (matrix row names in column 1, corresponding metadata in column 2)."))
       finalfiles<-input$file1
       finalsep<-input$filesep
-      vmat<-read.delim(file=finalfiles$datapath, header=T, sep=finalsep, check.names=F, stringsAsFactors=F)
+      vmat<-read.table(finalfiles$datapath, header=T, sep=finalsep)
       rownames(vmat)<-vmat[,1]
       vmat<-vmat[,2:ncol(vmat)]
       target<-rownames(vmat)
@@ -262,7 +262,7 @@ server <- function(input, output) {
     if (is.null(infile)){
       return(NULL)
     } else{
-      vmat<-read.delim(file=infile$datapath, header = T, sep=matrix.delim, check.names=F, stringsAsFactors=F)
+      vmat<-read.table(infile$datapath, header = T, sep=matrix.delim)
       rownames(vmat)<-vmat[,1]
       vmat<-vmat[,2:ncol(vmat)]
       if(vselect=='1'){
@@ -285,7 +285,7 @@ server <- function(input, output) {
     if (is.null(infile)){
       return(NULL)
     } else{
-      vmat<-read.delim(file=infile$datapath, header = T, sep=matrix.delim, check.names=F, stringsAsFactors=F)
+      vmat<-read.table(infile$datapath, header = T, sep=matrix.delim)
       rownames(vmat)<-vmat[,1]
       vmat<-vmat[,2:ncol(vmat)]
       if(vselect=='1'){
@@ -309,7 +309,7 @@ server <- function(input, output) {
     if (is.null(infile)){
       return(NULL)
     } else{
-      vmat<-read.delim(file=infile$datapath, header = T, sep=matrix.delim, check.names=F, stringsAsFactors=F)
+      vmat<-read.table(infile$datapath, header = T, sep=matrix.delim)
       rownames(vmat)<-vmat[,1]
       vmat<-vmat[,2:ncol(vmat)]
       if(vselect=='1'){
@@ -335,7 +335,7 @@ server <- function(input, output) {
       return(NULL)
     } 
     # split file by new line character
-    vmat<-read.delim(file=infile$datapath, header=T, sep=matrix.delim, check.names=F, stringsAsFactors=F)
+    vmat<-read.table(infile$datapath, header=T, sep=matrix.delim)
     rownames(vmat)<-vmat[,1]
     vmat<-vmat[,2:ncol(vmat)]
     # if NMDS selected
@@ -357,11 +357,11 @@ server <- function(input, output) {
           return(vnmds[[1]])}
         if (overlay==TRUE){
           meta.delim <- input$metasep
-          mtable<-read.delim(file=meta.in$datapath, header=FALSE, sep=meta.delim, check.names=F, stringsAsFactors=F)
+          mtable<-read.table(meta.in$datapath,header=FALSE,sep=meta.delim)
           validate(need(ncol(mtable)==2,"Your metadata file needs to have exactly 2 columns (matrix row names in column 1, corresponding metadata in column 2)."))
           finalfiles<-input$file1
           finalsep<-input$filesep
-          vmat<-read.delim(file=finalfiles$datapath, header=T, sep=finalsep, check.names=F, stringsAsFactors=F)
+          vmat<-read.table(finalfiles$datapath, header=T, sep=finalsep)
           rownames(vmat)<-vmat[,1]
           vmat<-vmat[,2:ncol(vmat)]
           target<-rownames(vmat)
@@ -401,11 +401,11 @@ server <- function(input, output) {
         if (input$pcaMeta==FALSE && input$tabs=="Plot"){
           pcaplot<-run.pca(vmat = vmat,metadata = NULL,pc1 = pc1,pc2 = pc2,pc3 = pc3)[[1]]}
         else{
-          mtable<-read.delim(file=meta.in$datapath, header=FALSE, sep=meta.delim, check.names=F, stringsAsFactors=F)
+          mtable<-read.table(meta.in$datapath,header=FALSE,sep=meta.delim)
           validate(need(ncol(mtable)==2,"Your metadata file needs to have exactly 2 columns (matrix row names in column 1, corresponding metadata in column 2)."))
           finalfiles<-input$file1
           finalsep<-input$filesep
-          vmat<-read.delim(file=finalfiles$datapath, header=T, sep=finalsep, check.names=F, stringsAsFactors=F)
+          vmat<-read.table(finalfiles$datapath, header=T, sep=finalsep)
           rownames(vmat)<-vmat[,1]
           vmat<-vmat[,2:ncol(vmat)]
           target<-rownames(vmat)
@@ -421,7 +421,7 @@ server <- function(input, output) {
 
 
 output$virbarchart <- renderPlot({
-  vmat<-read.delim(file=input$file1$datapath, header=T, sep=input$filesep, check.names=F, stringsAsFactors=F)
+  vmat<-read.table(input$file1$datapath, header=T, sep=input$filesep)
   validate(need(ncol(vmat)>1,'Your n x m matrix only has 1 column; please go to the "Home" tab and select the appropriate column delimiter in the "Matrix delimiter" drop-down menu, or reformat your matrix file.'))
   myplot<-besplot()
   print(input$file1)
@@ -441,7 +441,7 @@ getclicks <- function(){
   if (is.null(infile)){
     return(NULL)
   } 
-  vmat<-read.delim(file=infile$datapath, header=T, sep=matrix.delim, check.names=F, stringsAsFactors=F)
+  vmat<-read.table(infile$datapath, header=T, sep=matrix.delim)
   rownames(vmat)<-vmat[,1]
   vmat<-vmat[,2:ncol(vmat)]
   if (input$tabs=="makeplot"){
